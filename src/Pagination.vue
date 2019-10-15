@@ -1,21 +1,21 @@
 <template>
-  <ul class="pagination" style="margin: 0" name="Pagination">
-    <li v-if="!isFirstPage" class="page-item" @click="turnPage(-1)">
-      <a href="#" class="page-link" @click.prevent>
-        <i class="fa fa-arrow-left"></i>
+  <ul class="wb-pager justify-content-start" style="margin: 0" name="Pagination">
+    <li :class="{'disabled': isFirstPage}" class="" @click="turnPage(-1)">
+      <a href="#"  @click.prevent>
+          <font-awesome-icon icon="angle-left"></font-awesome-icon>
       </a>
     </li>
-    <li v-for="i in dspBtns" :class="['page-item', { 'active': i === curPage }]">
-      <a v-if="i" href="#" class="page-link" @click.prevent="handleClick(i)">
+    <li v-for="i in dspBtns" :class="['', { 'active': i === curPage }]">
+      <a v-if="i" href="#"  @click.prevent="handleClick(i)">
         {{ i }}
       </a>
-      <a v-else class="page-link">
+      <a v-else >
         <i class="fa fa-ellipsis-h"></i>
       </a>
     </li>
-    <li v-if="!isLastPage" class="page-item" @click="turnPage(1)">
-      <a href="#" class="page-link" @click.prevent>
-        <i class="fa fa-arrow-right"></i>
+    <li :class="{'disabled': isLastPage}" class="" @click="turnPage(1)">
+      <a href="#" @click.prevent>
+          <font-awesome-icon icon="angle-right"></font-awesome-icon>
       </a>
     </li>
   </ul>

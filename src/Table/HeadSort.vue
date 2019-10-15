@@ -1,6 +1,6 @@
 <template>
-  <a href="#" @click.prevent="handleClick" name="HeadSort">
-    <i :class="cls"></i>
+  <a href="#" @click.prevent="handleClick" name="HeadSort"  :class="cls" > 
+      <i class="icon-sort-arrow-title"></i> 
   </a>
 </template>
 <script>
@@ -20,10 +20,9 @@ export default {
     cls () {
       const { order } = this
       return [
-        'fa',
-        { 'fa-sort text-muted': !order,
-          'fa-sort-up': order === 'asc',
-          'fa-sort-down': order === 'desc'
+        { '': !order,
+          'sorted-asc': order === 'asc',
+          'sorted-desc': order === 'desc'
         }
       ]
     }

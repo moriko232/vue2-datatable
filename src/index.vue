@@ -10,14 +10,17 @@
     <tbl v-bind="$props" />
     
     <div v-if="Pagination" class="row" style="margin-top: 10px">
-      <div class="col-sm-6">
-        <strong>
+      <div class="col-sm-5">
+        <pagination class="pull-left" :total="total" :query="query" />
+      </div>
+
+      <div class="col-sm-7">
+        <slot name="bottom-right"></slot>
+        <!-- 未用到自選分頁，暫時隱藏 -->
+        <!-- <strong>
           {{ $i18nForDatatable('Total') }} {{ total }} {{ $i18nForDatatable(',') }}
         </strong>
-        <page-size-select :query="query" :page-size-options="pageSizeOptions" />
-      </div>
-      <div class="col-sm-6">
-        <pagination class="pull-right" :total="total" :query="query" />
+        <page-size-select :query="query" :page-size-options="pageSizeOptions"></page-size-select> -->
       </div>
     </div>
   </div>
