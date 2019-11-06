@@ -1,5 +1,6 @@
 <template>
   <div name="Datatable">
+    <slot name="top"></slot>
     <div v-if="$slots.default || HeaderSettings" class="clearfix" style="margin-bottom: 10px">
       <header-settings v-if="HeaderSettings" class="pull-right"
         :columns="columns" :support-backup="supportBackup">
@@ -9,12 +10,12 @@
 
     <tbl v-bind="$props" />
     
-    <div v-if="Pagination" class="row" style="margin-top: 10px">
-      <div class="col-sm-5">
-        <pagination class="pull-left" :total="total" :query="query" />
+    <div v-if="Pagination" class="row mt-md-3" >
+      <div class="col-md-5 order-md-1 order-2">
+        <pagination class="justify-items-center" :total="total" :query="query" />
       </div>
 
-      <div class="col-sm-7">
+      <div class="col-md-7 order-md-2 order-1 mb-md-0 mb-3">
         <slot name="bottom-right"></slot>
         <!-- 未用到自選分頁，暫時隱藏 -->
         <!-- <strong>
