@@ -10,19 +10,20 @@
 
     <tbl v-bind="$props" />
     
-    <div v-if="Pagination" class="row mt-md-3" >
-      <div class="col-md-5 order-md-1 order-2">
+    <div v-if="Pagination" class="row mt-md-3 position-relative" >
+      <slot name="bottom-left"></slot>
+      <div class="col-12 justify-items-center">
         <pagination class="justify-items-center" :total="total" :query="query" />
       </div>
 
-      <div class="col-md-7 order-md-2 order-1 mb-md-0 mb-3">
-        <slot name="bottom-right"></slot>
+      <!-- <div class="col-md-7 order-md-2 order-1 mb-md-0 mb-3">
+        <slot name="bottom-right"></slot> -->
         <!-- 未用到自選分頁，暫時隱藏 -->
         <!-- <strong>
           {{ $i18nForDatatable('Total') }} {{ total }} {{ $i18nForDatatable(',') }}
         </strong>
         <page-size-select :query="query" :page-size-options="pageSizeOptions"></page-size-select> -->
-      </div>
+      <!-- </div> -->
     </div>
   </div>
 </template>

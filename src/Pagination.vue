@@ -1,5 +1,5 @@
 <template>
-  <ul class="wb-pager justify-content-md-start" style="margin: 0" name="Pagination">
+  <ul class="wb-pager" style="margin: 0" name="Pagination">
     <li :class="{'disabled': isFirstPage}" class="" @click="turnPage(-1)">
       <a href="#"  @click.prevent>
           <font-awesome-icon icon="angle-left"></font-awesome-icon>
