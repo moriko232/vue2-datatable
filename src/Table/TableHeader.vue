@@ -17,11 +17,13 @@
           v-bind="$props">
         </component>
         <template v-else>
-          {{ col.title }}
+          <template v-if="!col.sortable">
+            {{ col.title }}
+          </template>
         </template>
 
         <i v-if="col.explain" class="fa fa-info-circle" style="cursor: help" :title="col.explain"></i>
-        <head-sort v-if="col.sortable" :field="col.field" :query="query" />
+        <head-sort v-if="col.sortable" :field="col.field" :query="query" :title="col.title" />
       </th>
     </transition-group>
   </thead>

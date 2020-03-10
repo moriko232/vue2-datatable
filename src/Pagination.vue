@@ -59,6 +59,7 @@ export default {
   methods: {
     handleClick (n) {
       this.query.offset = (n - 1) * +this.query.limit
+      window.scrollTo({ top: 0, behavior: 'smooth' })
     },
     turnPage (i) {
       if (i < 0 && this.isFirstPage || i > 0 && this.isLastPage) return

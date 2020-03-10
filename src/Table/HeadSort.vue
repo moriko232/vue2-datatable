@@ -1,5 +1,5 @@
 <template>
-  <a href="#" @click.prevent="handleClick" name="HeadSort"  :class="cls" > 
+  <a class="admin-focus1" href="#" @click.prevent="handleClick" name="HeadSort"  :class="cls" > {{title}}
       <i class="icon-sort-arrow-title"></i> 
   </a>
 </template>
@@ -10,6 +10,7 @@
 export default {
   name: 'HeadSort',
   props: {
+    title: { type: String, required: false },
     field: { type: String, required: true },
     query: { type: Object, required: true }
   },
