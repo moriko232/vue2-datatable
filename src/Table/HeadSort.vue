@@ -1,5 +1,5 @@
 <template>
-  <a class="admin-focus1" href="#" @click.prevent="handleClick" name="HeadSort"  :class="cls" > {{title}}
+  <a class="admin-focus1 admin-link" href="#" @click.prevent="handleClick" name="HeadSort"  :class="cls" > {{title}}
       <i class="icon-sort-arrow-title"></i> 
   </a>
 </template>
