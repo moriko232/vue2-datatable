@@ -12,6 +12,7 @@
             :row="summary"
             :field="col.field"
             :value="summary[col.field]"
+            :index="idx"
             v-bind="$props">
           </component>
           <template v-else>

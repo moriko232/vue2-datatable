@@ -14,6 +14,7 @@
           :column="col"
           :field="col.field"
           :title="col.title"
+          :index="idx"
           v-bind="$props">
         </component>
         <template v-else>

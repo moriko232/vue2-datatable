@@ -1,18 +1,19 @@
 <template>
   <tbody>
     <template v-if="data.length">
-      <template v-for="item in data">
+      <template v-for="(item, dataIdx) in data">
         <tr>
           <td v-if="shouldRenderSelection">
             <multi-select :selection="selection" :row="item" />
           </td>
-          <td v-for="col in columns" :class="col.tdClass" :style="col.tdStyle">
-            <!-- <td> component (tdComp) -->
+          <td v-for="(col, idx) in columns" :class="col.tdClass" :style="col.tdStyle">
             <component
               v-if="col.tdComp"
               :is="forDynCompIs(col.tdComp)"
               :row="item"
               :field="col.field"
+              :title="col.title"
+              :index="dataIdx +1"
               :value="item[col.field]"
               :nested="item.__nested__"
               v-bind="$props">
